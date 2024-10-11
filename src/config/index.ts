@@ -1,0 +1,1 @@
+export const MY_URL = "https://codeon2024.vercel.app/";

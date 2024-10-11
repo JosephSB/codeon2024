@@ -1,0 +1,132 @@
+---
+import CustomImage from "./CustomImage.astro";
+
+import iconDSC from "/public/assets/dsc_utp.svg";
+const facebookURL = "https://www.facebook.com/gdsc.utp.peru";
+const instagramURL = "https://www.instagram.com/dsc.utp/";
+const linkedinURL = "https://www.linkedin.com/company/dsc-utp/";
+const twitterURL = "https://x.com/dsc_utp";
+import facebookIcon from "/public/assets/facebook_icon.svg";
+import instagramIcon from "/public/assets/instagram_icon.svg";
+import linkedinIcon from "/public/assets/linkedin_icon.svg";
+import twitterIcon from "/public/assets/twitter_x_icon.svg";
+---
+
+<footer class="footer">
+    <div class="box">
+        <div class="icon">
+            <CustomImage
+                mobileImgUrl={iconDSC}
+                desktopImgUrl={iconDSC}
+                alt="DSC UTP logo"
+                width={200}
+            />
+        </div>
+        <div class="contact">
+            <p>Síguenos en:</p>
+            <div class="social-icons">
+                <a href={facebookURL} target="_blank">
+                    <CustomImage
+                        mobileImgUrl={facebookIcon}
+                        desktopImgUrl={facebookIcon}
+                        alt="Facebook icono"
+                        width={24}
+                        height={24}
+                    />
+                </a>
+                <a href={instagramURL} target="_blank">
+                    <CustomImage
+                        mobileImgUrl={instagramIcon}
+                        desktopImgUrl={instagramIcon}
+                        alt="Instagram icono"
+                        width={24}
+                        height={24}
+                    />
+                </a>
+                <a href={linkedinURL} target="_blank">
+                    <CustomImage
+                        mobileImgUrl={linkedinIcon}
+                        desktopImgUrl={linkedinIcon}
+                        alt="LinkedIn icono"
+                        width={20}
+                        height={20}
+                    />
+                </a>
+                <a href={twitterURL} target="_blank">
+                    <CustomImage
+                        mobileImgUrl={twitterIcon}
+                        desktopImgUrl={twitterIcon}
+                        alt="Twitter icono"
+                        width={20}
+                        height={20}
+                    />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer{
+		width: 100%;
+        background-color: #171A21;
+        color: #fff;
+    }
+    .box {
+        width: 100%;
+		max-width: var(--max-width);
+		margin: auto;
+		padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 2em;
+        
+    }
+
+    .icon img {
+        max-height: 50px;
+    }
+
+    .contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contact p {
+        margin: 0;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .social-icons a img {
+        width: auto;
+    }
+
+    @media (max-width: 799px) {
+        .box {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .contact {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact p {
+            margin-bottom: 0.5em;
+        }
+
+        .social-icons {
+            justify-content: center;
+        }
+    }
+</style>

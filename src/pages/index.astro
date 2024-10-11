@@ -1,0 +1,272 @@
+---
+import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
+import Layout from "../layouts/Layout.astro";
+import SpeakerSlider from "../components/SpeakerSlider.astro";
+import SponsorSection from "../sections/SponsorSection.astro";
+import CommunitiesSection from "../sections/CommunitiesSection.astro";
+import Count from "../components/Counter.astro";
+import PartnerSection from "../sections/PartnerSection.astro";
+import CallToAction from "../components/CallToAction.astro";
+import BannerSection from "../sections/banner.section.astro";
+import BannerInfoSection from "../sections/banner-info.section.astro";
+import ScheduleSection from "../sections/ScheduleSection.astro";
+---
+
+<Layout title="CodeOn 2024">
+  <main>
+    <BannerSection />
+    <BannerInfoSection />
+    <div class="container-register" id="register">
+      <div class="register">
+        <p class="title">Registro</p>
+        <p class="subtitle">Haz click en el botón y obtén tu entrada:</p>
+        <div class="button">
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M15 5l0 2"></path><path d="M15 11l0 2"></path><path
+                d="M15 17l0 2"></path><path
+                d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2"
+              ></path></svg
+            >
+          </div>
+          <a
+            href="https://lu.ma/teg3ei2k"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit;"
+          >
+            <p>Obtener entrada</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br />
+    <Count />
+    <div class="agenda agenda_container" id="agenda">
+      <ScheduleSection />
+    </div>
+    <br />
+    <!-- TODO: DESCOMENTAR CUANDO HAYA SPEAKERS - FALTA RESPONSIVE DE CARDS SPEAKERS -->
+    <div class="speakers" id="speakers">
+      <div class="cabe-speakers">
+        <p class="title">Speakers</p>
+        <p class="sub-title">¡Conoce a nuestros speakers!</p>
+      </div>
+      <SpeakerSlider />
+      <CallToAction
+        title="Call for speakers"
+        subtitle="¿Deseas ser speaker en nuestro evento?"
+        buttonText="Contáctanos"
+        buttonLink="https://docs.google.com/forms/d/e/1FAIpQLSeTwoRRGzl7I1ExgDim6_R6nwHGwmLwkSvuQeindCF5Fhzo9A/viewform"
+      />
+    </div>
+    <div class="patners">
+      <p class="title">Partner</p>
+      <br />
+      <PartnerSection />
+    </div>
+    <!-- TODO: COMENTAR SECCIÓN SPONSOR POR AHORA -->
+    <SponsorSection />
+    <!-- CALL SponsorS -->
+    <CallToAction
+      id="sponsors"
+      title="Quiero ser Sponsor"
+      subtitle="¡Únete como sponsor y destaca tu marca en nuestro evento!"
+      buttonText="Conviértete en Sponsor"
+      buttonLink="https://drive.google.com/file/d/1ofgasD1Agh9IJCDCW9Avn01MPpjVHQku/view"
+    />
+    <CommunitiesSection />
+    <br />
+    <br />
+    <br />
+  </main>
+</Layout>
+
+<style>
+  main {
+    background: linear-gradient(to bottom, #0d121d, #273551, #171a20);
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .banner,
+  .agenda,
+  .speakers,
+  .call-speakers,
+  .patners {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .banner {
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner-info,
+  .banner-logo {
+    width: 100%;
+    z-index: 5;
+  }
+
+  .banner-info .logo {
+    background-color: white;
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 900;
+    padding: 0.5rem 1rem;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+
+  .banner-info .logo h1 {
+    margin: 0;
+  }
+
+  .banner-info p {
+    margin: 20px 0;
+  }
+
+  .container-register {
+    z-index: 5;
+    width: 100%;
+    background: linear-gradient(to bottom, #ff7a00, #994900);
+  }
+
+  .agenda_container {
+    margin-top: 70px;
+  }
+  .register {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 1rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .register .title {
+    font-size: 30px;
+    margin: 0;
+    font-weight: bold;
+  }
+  .register .subtitle {
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+  }
+
+  .register .button {
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: white;
+    color: #994900;
+    padding: 0.3rem;
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .register .button .icon {
+    width: 30px;
+    height: 30px;
+    padding: 0.2rem;
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #994900;
+    color: white;
+  }
+
+  .register .button p {
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .agenda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .patners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .agenda .title,
+  .call-speakers .title,
+  .patners .title {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .call-speakers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .call-speakers .btn {
+    padding: 0.8rem 3rem;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+
+  .speakers .cabe-speakers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .speakers .cabe-speakers .title {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .sub-title {
+    text-align: center;
+  }
+
+  .speakers .cabe-speakers .sub-title {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    .banner {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  }
+</style>
