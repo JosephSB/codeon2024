@@ -1,0 +1,37 @@
+---
+import SponsorsSlide from "../components/SponsorsSlide.astro";
+const sponsors = [
+  { imageUrl: "/assets/sponsors/Notion.svg", altText: "Notion Peru", slot: "sponsor1" },
+  { imageUrl: "/assets/sponsors/edomo.svg", altText: "Edomo", slot: "sponsor2" },
+  { imageUrl: "/assets/sponsors/ninjadata.svg", altText: "Ninjadata", slot: "sponsor3" },
+  { imageUrl: "/assets/sponsors/DataGrowth.svg", altText: "DataGrowth", slot: "sponsor4" },
+  { imageUrl: "/assets/comunities/DSRP_BLANCO.png", altText: "DataScience", slot: "sponsor5" },
+];
+
+
+---
+<section id="sponsors">
+  <h2>Sponsors</h2>
+  <p>¡Conoce a nuestros sponsors!</p>
+  <SponsorsSlide type="left" sponsors={sponsors} />
+</section>
+
+<style>
+  section {
+    width: 100%;
+		max-width: var(--max-width);
+		margin: auto;
+		padding: 1rem;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  h2 {
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  p {
+    color: #ffffff;
+    margin-top: 0;
+  }
+</style>
